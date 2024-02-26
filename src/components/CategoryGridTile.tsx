@@ -5,9 +5,10 @@ import type { ColorValue } from "react-native";
 type CategoryGridTile = {
   title: string;
   color: ColorValue;
+  onPress: () => void;
 };
 
-export function CategoryGridTile({ title, color }: CategoryGridTile) {
+export function CategoryGridTile({ title, color, onPress }: CategoryGridTile) {
   return (
     <View style={styles.gridItem}>
       <Pressable
@@ -16,6 +17,7 @@ export function CategoryGridTile({ title, color }: CategoryGridTile) {
           styles.button,
           pressed ? styles.buttonPressed : null,
         ]}
+        onPress={onPress}
       >
         <View style={[styles.innerContainer, { backgroundColor: color }]}>
           <Text style={styles.title}>{title}</Text>
