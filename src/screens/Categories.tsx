@@ -15,14 +15,21 @@ type renderItemProps = {
 };
 
 export function CategoriesScreen() {
-  const navigation = useNavigation<NavigationProp<RootStackParamList, 'MealsCategories'>>();
+  const navigation =
+    useNavigation<NavigationProp<RootStackParamList, "MealsCategories">>();
 
   function renderCategoryItem({ item }: renderItemProps) {
     function onPressHandler() {
-      navigation.navigate("MealsOverview", { categoryId: item.id })
+      navigation.navigate("MealsOverview", { categoryId: item.id });
     }
 
-    return <CategoryGridTile title={item.title} color={item.color} onPress={onPressHandler} />;
+    return (
+      <CategoryGridTile
+        title={item.title}
+        color={item.color}
+        onPress={onPressHandler}
+      />
+    );
   }
 
   return (
