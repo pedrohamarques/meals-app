@@ -1,5 +1,5 @@
 import { useLayoutEffect } from "react";
-import { StyleSheet, Text, View, FlatList } from "react-native";
+import { StyleSheet, View, FlatList } from "react-native";
 import { MEALS, CATEGORIES } from "../data/dummy-data";
 import {
   NavigationProp,
@@ -8,7 +8,6 @@ import {
 } from "@react-navigation/native";
 
 import { MealItem } from "../components/MealItem";
-import Meal from "../models/meal";
 
 import type { MealItemProps } from "../components/MealItem";
 import type { RootStackParamList } from "../../App";
@@ -29,7 +28,6 @@ export function MealsOverviewScreen() {
     const categoryTitle = CATEGORIES.find(
       (category) => category.id === categoryId,
     )?.title;
-    console.log(categoryTitle);
 
     navigation.setOptions({ title: categoryTitle });
   }, [navigation, categoryId]);
@@ -40,6 +38,7 @@ export function MealsOverviewScreen() {
     affordability,
     complexity,
     duration,
+    id,
   }: MealItemProps) {
     return (
       <MealItem
@@ -48,6 +47,7 @@ export function MealsOverviewScreen() {
         affordability={affordability}
         complexity={complexity}
         duration={duration}
+        id={id}
       />
     );
   }
