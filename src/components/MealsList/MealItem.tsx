@@ -6,10 +6,10 @@ import {
   StyleSheet,
   Platform,
 } from "react-native";
-import type Meal from "../models/meal";
+import type Meal from "../../models/meal";
 import { NavigationProp, useNavigation } from "@react-navigation/native";
-import { RootStackParamList } from "../../App";
-import { MealDetails } from "./MealDetails";
+import { RootStackParamList } from "../../../App";
+import { MealDetails } from "../MealDetails";
 
 export type MealItemProps = Pick<
   Meal,
