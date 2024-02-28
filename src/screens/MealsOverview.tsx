@@ -6,7 +6,7 @@ import {
 } from "@react-navigation/native";
 
 import { MEALS, CATEGORIES } from "../data/dummy-data";
-import { MealList } from "../components/MealsList/MealList";
+import { MealList } from "../components/MealsList/meal-list/MealList";
 
 import type { RouteProp } from "@react-navigation/native";
 import type { RootStackParamList } from "../../App";

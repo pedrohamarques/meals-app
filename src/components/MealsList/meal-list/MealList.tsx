@@ -1,6 +1,6 @@
 import { FlatList, StyleSheet, View } from "react-native";
-import { MealItem, MealItemProps } from "./MealItem";
-import Meal from "../../models/meal";
+import { MealItem, MealItemProps } from "../meal-item/MealItem";
+import Meal from "../../../models/meal";
 
 type MealListProps = {
   items: Meal[];
@@ -28,7 +28,7 @@ export function MealList({ items }: MealListProps) {
   }
 
   return (
-    <View style={styles.container}>
+    <View style={styles.container} testID="components.MealsList.meal-list.view">
       <FlatList
         data={items}
         keyExtractor={(item) => item.id}

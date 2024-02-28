@@ -6,10 +6,10 @@ import {
   StyleSheet,
   Platform,
 } from "react-native";
-import type Meal from "../../models/meal";
-import { NavigationProp, useNavigation } from "@react-navigation/native";
-import { RootStackParamList } from "../../../App";
-import { MealDetails } from "../MealDetails";
+import type Meal from "../../../models/meal";
+
+import { MealDetails } from "../../MealDetails";
+import { useMealItem } from "./MealItem.hook";
 
 export type MealItemProps = Pick<
   Meal,
@@ -24,19 +24,15 @@ export function MealItem({
   complexity,
   id,
 }: MealItemProps) {
-  const navigation =
-    useNavigation<NavigationProp<RootStackParamList, "MealDetails">>();
-
-  function itemPressHandle() {
-    navigation.navigate("MealDetails", { mealId: id });
-  }
+  const { itemPressHandler } = useMealItem({ id });
 
   return (
     <View style={styles.mealItem}>
       <Pressable
         android_ripple={{ color: "#ccc" }}
         style={({ pressed }) => (pressed ? styles.buttonPressed : null)}
-        onPress={itemPressHandle}
+        onPress={itemPressHandler}
+        testID="components.meals-list.meal-item.MealItem.pressable"
       >
         <View style={styles.innerContainer}>
           <Image source={{ uri: imageUrl }} style={styles.image} />

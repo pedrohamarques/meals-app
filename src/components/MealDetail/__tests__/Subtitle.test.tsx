@@ -1,15 +1,19 @@
-import { screen, render } from '@testing-library/react-native';
-import { Subtitle } from '../Subtitle';
-import { Text } from 'react-native';
+import { screen, render } from "@testing-library/react-native";
+import { Subtitle } from "../Subtitle";
+import { Text } from "react-native";
 
-describe('components/Subtitle/<Subtitle />', () => {
+describe("components/Subtitle/<Subtitle />", () => {
   beforeAll(() => {
-    jest.clearAllMocks()
+    jest.clearAllMocks();
   });
 
-  it('renders component properly', () => {
-    render(<Subtitle><Text>Some Text</Text></Subtitle>)
+  it("renders component properly", () => {
+    render(
+      <Subtitle>
+        <Text>Some Text</Text>
+      </Subtitle>,
+    );
 
-    expect(screen.getByText('Some Text')).toBeTruthy();
+    expect(screen.getByText("Some Text")).toBeTruthy();
   });
-})
+});
