@@ -3,8 +3,8 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import { CategoriesScreen } from "./src/screens/Categories";
-import { MealsOverviewScreen } from "./src/screens/MealsOverview";
-import { MealsDetailsScreen } from "./src/screens/MealsDetails";
+import { MealsOverviewScreen } from "./src/screens/meals-overview/MealsOverview";
+import { MealsDetailsScreen } from "./src/screens/meals-details/MealsDetails";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { FavoritesScreen } from "./src/screens/Favorites";
 import { Ionicons } from "@expo/vector-icons";

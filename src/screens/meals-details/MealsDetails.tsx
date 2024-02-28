@@ -1,40 +1,20 @@
+import { useLayoutEffect } from "react";
 import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
-import {
-  NavigationProp,
-  RouteProp,
-  useNavigation,
-  useRoute,
-} from "@react-navigation/native";
 
-import { MEALS } from "../data/dummy-data";
+import { MealDetails } from "../../components/MealDetails";
+import { Subtitle } from "../../components/MealDetail/Subtitle";
+import { List } from "../../components/MealDetail/List";
+import { IconButton } from "../../components/IconButton";
 
-import type { RootStackParamList } from "../../App";
-import { MealDetails } from "../components/MealDetails";
-import { Subtitle } from "../components/MealDetail/Subtitle";
-import { List } from "../components/MealDetail/List";
-import { useContext, useLayoutEffect } from "react";
-import { IconButton } from "../components/IconButton";
-import { FavoritesContext } from "../store/context/favorites-context";
+import { useMealsDetailsScreen } from "./MealsDetails.hook";
 
 export function MealsDetailsScreen() {
-  const { ids, addFavorite, removeFavorite } = useContext(FavoritesContext);
-  const navigation = useNavigation<NavigationProp<RootStackParamList>>();
-
-  const route = useRoute<RouteProp<RootStackParamList, "MealDetails">>();
-
-  const { mealId } = route.params;
-
-  const selectedMeal = MEALS.find((meal) => meal.id === mealId);
-
-  const isMealFavorite = ids.includes(mealId);
-
-  function changeFavoriteStatusHandler() {
-    if (isMealFavorite) {
-      removeFavorite(mealId);
-    } else {
-      addFavorite(mealId);
-    }
-  }
+  const {
+    changeFavoriteStatusHandler,
+    isMealFavorite,
+    navigation,
+    selectedMeal,
+  } = useMealsDetailsScreen();
 
   useLayoutEffect(() => {
     navigation.setOptions({
