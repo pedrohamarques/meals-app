@@ -18,6 +18,7 @@ export function CategoryGridTile({ title, color, onPress }: CategoryGridTile) {
           pressed ? styles.buttonPressed : null,
         ]}
         onPress={onPress}
+        testID="components.CategoryGridTile.pressable"
       >
         <View style={[styles.innerContainer, { backgroundColor: color }]}>
           <Text style={styles.title}>{title}</Text>
