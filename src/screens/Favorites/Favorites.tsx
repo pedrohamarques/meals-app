@@ -1,13 +1,11 @@
-import { useContext } from "react";
-import { MealList } from "../components/MealsList/meal-list/MealList";
-import { FavoritesContext } from "../store/context/favorites-context";
-import { MEALS } from "../data/dummy-data";
 import { StyleSheet, Text, View } from "react-native";
 
-export function FavoritesScreen() {
-  const { ids } = useContext(FavoritesContext);
+import { MealList } from "../../components/MealsList/meal-list/MealList";
 
-  const favoriteMeals = MEALS.filter((meal) => ids.includes(meal.id));
+import { useFavoritesScreen } from "./Favorites.hook";
+
+export function FavoritesScreen() {
+  const { favoriteMeals } = useFavoritesScreen();
 
   if (favoriteMeals.length === 0) {
     return (

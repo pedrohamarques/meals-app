@@ -6,7 +6,7 @@ import { CategoriesScreen } from "./src/screens/categories/Categories";
 import { MealsOverviewScreen } from "./src/screens/meals-overview/MealsOverview";
 import { MealsDetailsScreen } from "./src/screens/meals-details/MealsDetails";
 import { createDrawerNavigator } from "@react-navigation/drawer";
-import { FavoritesScreen } from "./src/screens/Favorites";
+import { FavoritesScreen } from "./src/screens/Favorites/Favorites";
 import { Ionicons } from "@expo/vector-icons";
 
 import { FavoritesContextProvider } from "./src/store/context/favorites-context";
