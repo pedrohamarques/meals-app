@@ -30,7 +30,11 @@ export function MealsDetailsScreen() {
   }, [navigation, changeFavoriteStatusHandler]);
   return (
     <ScrollView style={styles.rootContainer}>
-      <Image style={styles.image} source={{ uri: selectedMeal?.imageUrl }} />
+      <Image
+        style={styles.image}
+        source={{ uri: selectedMeal?.imageUrl }}
+        testID="screens.meals-details.MealsDetails.image"
+      />
       <Text style={styles.title}>{selectedMeal?.title}</Text>
 
       <MealDetails
@@ -39,7 +43,10 @@ export function MealsDetailsScreen() {
         affordability={selectedMeal!.affordability}
         textStyle={styles.detailText}
       />
-      <View style={styles.listOuterContainer}>
+      <View
+        style={styles.listOuterContainer}
+        testID="screens.meals-details.MealsDetails.listsContainer"
+      >
         <View style={styles.listContainer}>
           <Subtitle>Ingredients</Subtitle>
           <List data={selectedMeal!.ingredients} />
