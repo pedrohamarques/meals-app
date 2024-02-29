@@ -2,7 +2,7 @@ import { StatusBar } from "expo-status-bar";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import { CategoriesScreen } from "./src/screens/Categories";
+import { CategoriesScreen } from "./src/screens/categories/Categories";
 import { MealsOverviewScreen } from "./src/screens/meals-overview/MealsOverview";
 import { MealsDetailsScreen } from "./src/screens/meals-details/MealsDetails";
 import { createDrawerNavigator } from "@react-navigation/drawer";
