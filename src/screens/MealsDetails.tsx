@@ -18,7 +18,7 @@ import { useAppDispatch, useAppSelector } from "../hooks/redux";
 import { addFavorite, removeFavorite } from "../store/redux/slices/favorites";
 
 export function MealsDetailsScreen() {
-  const favoriteMealsIds = useAppSelector((state) => state.favoriteMeals.ids);
+  const favoriteMealsIds = useAppSelector((state) => state.favorites.ids);
   const dispatch = useAppDispatch();
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
 
