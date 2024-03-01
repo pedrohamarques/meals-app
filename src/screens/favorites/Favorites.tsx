@@ -1,16 +1,11 @@
-import { useContext } from "react";
-import { MealList } from "../components/MealsList/MealList";
-
-import { MEALS } from "../data/dummy-data";
 import { StyleSheet, Text, View } from "react-native";
-import { useAppSelector } from "../hooks/redux";
+
+import { useFavoritesScreen } from "./Favorites.hook";
+
+import { MealList } from "../../components/MealsList/MealList";
 
 export function FavoritesScreen() {
-  const favoriteMealsIds = useAppSelector((state) => state.favoriteMeals.ids);
-
-  const favoriteMeals = MEALS.filter((meal) =>
-    favoriteMealsIds.includes(meal.id),
-  );
+  const { favoriteMeals } = useFavoritesScreen();
 
   if (favoriteMeals.length === 0) {
     return (
@@ -20,7 +15,9 @@ export function FavoritesScreen() {
     );
   }
 
-  return <MealList items={favoriteMeals} />;
+  return (
+    <MealList items={favoriteMeals} testID="screens.favorites.Favorites" />
+  );
 }
 
 const styles = StyleSheet.create({

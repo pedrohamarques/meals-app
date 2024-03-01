@@ -4,9 +4,10 @@ import Meal from "../../models/meal";
 
 type MealListProps = {
   items: Meal[];
+  testID?: string;
 };
 
-export function MealList({ items }: MealListProps) {
+export function MealList({ items, testID }: MealListProps) {
   function renderMealItem({
     title,
     imageUrl,
@@ -28,7 +29,7 @@ export function MealList({ items }: MealListProps) {
   }
 
   return (
-    <View style={styles.container}>
+    <View style={styles.container} testID={`${testID}.mealsList.view`}>
       <FlatList
         data={items}
         keyExtractor={(item) => item.id}

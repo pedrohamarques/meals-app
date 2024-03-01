@@ -6,11 +6,11 @@ import { CategoriesScreen } from "./src/screens/Categories";
 import { MealsOverviewScreen } from "./src/screens/MealsOverview";
 import { MealsDetailsScreen } from "./src/screens/MealsDetails";
 import { createDrawerNavigator } from "@react-navigation/drawer";
-import { FavoritesScreen } from "./src/screens/Favorites";
+import { FavoritesScreen } from "./src/screens/favorites/Favorites";
 import { Ionicons } from "@expo/vector-icons";
 
 import { Provider } from "react-redux";
-import { store } from "./src/store/redux/store";
+import { setupStore } from "./src/store/redux/store";
 
 export type RootStackParamList = {
   MealsCategories: undefined;
@@ -60,7 +60,7 @@ export default function App() {
   return (
     <>
       <StatusBar style="light" />
-      <Provider store={store}>
+      <Provider store={setupStore()}>
         <NavigationContainer>
           <Stack.Navigator
             initialRouteName="MealsCategories"
