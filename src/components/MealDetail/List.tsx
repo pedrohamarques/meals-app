@@ -2,11 +2,16 @@ import { Text, View, StyleSheet } from "react-native";
 
 type ListProps = {
   data: string[];
+  testId?: string;
 };
 
-export function List({ data }: ListProps) {
-  return data.map((dataItem) => (
-    <View key={dataItem} style={styles.listItem}>
+export function List({ data, testId }: ListProps) {
+  return data.map((dataItem, index) => (
+    <View
+      key={dataItem}
+      style={styles.listItem}
+      testID={`components.meal-detail.${testId}-${index}`}
+    >
       <Text style={styles.itemText}>{dataItem}</Text>
     </View>
   ));

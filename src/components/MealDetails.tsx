@@ -6,6 +6,7 @@ type MealProps = Pick<Meal, "duration" | "complexity" | "affordability">;
 type MealDetailsProps = MealProps & {
   style?: ViewProps;
   textStyle?: TextStyle;
+  testID?: string;
 };
 
 export function MealDetails({
@@ -14,9 +15,13 @@ export function MealDetails({
   complexity,
   style,
   textStyle,
+  testID,
 }: MealDetailsProps) {
   return (
-    <View style={[styles.detailsContainer, style]}>
+    <View
+      style={[styles.detailsContainer, style]}
+      testID={`components.meals-details.${testID}`}
+    >
       <Text style={[styles.detailItem, textStyle]}>{duration} min</Text>
       <Text style={[styles.detailItem, textStyle]}>
         {complexity.toUpperCase()}
