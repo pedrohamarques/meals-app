@@ -4,7 +4,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import { CategoriesScreen } from "./src/screens/Categories";
 import { MealsOverviewScreen } from "./src/screens/MealsOverview";
-import { MealsDetailsScreen } from "./src/screens/MealsDetails";
+import { MealsDetailsScreen } from "./src/screens/meals-details/MealsDetails";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { FavoritesScreen } from "./src/screens/favorites/Favorites";
 import { Ionicons } from "@expo/vector-icons";
